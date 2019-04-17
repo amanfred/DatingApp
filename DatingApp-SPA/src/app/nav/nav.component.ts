@@ -1,3 +1,4 @@
+import { AuthService } from './../_services/auth.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,13 +10,16 @@ export class NavComponent implements OnInit {
 
   model: any = {};
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   login() {
-    console.log(this.model);
+    this.authService.login(this.model).subscribe(next => { // we alwayns need to subscribe to observable
+      console.log('Logged in successfully!');
+    }, error => {
+      console.log('Failed to log in');
+    });
   }
-
 }

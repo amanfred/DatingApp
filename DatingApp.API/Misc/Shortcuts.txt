@@ -1,6 +1,10 @@
 Ctrl + K + C = comment a line
 Ctrl + K + U = uncomment a line
+Shift + Alt + F = Auto format
 
+
+dotnet watch run = terminal command for starting the API server (API folder)
+ng serve = terminal command for starting the UI server (UI folder)
 
 <form #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit) = "login()">
     <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" required [(ngModel)]="model.username" #username = "ngModel">
@@ -24,3 +28,5 @@ Ctrl + K + U = uncomment a line
   Password Dirty: {{password.dirty}}
   Password Values: {{password.value}}
 </pre>
+
+rxjs = Reactive Extensions for JavaScript
