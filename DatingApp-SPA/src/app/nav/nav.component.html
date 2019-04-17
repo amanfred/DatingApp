@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Dating App</a>
+
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Matches</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Lists</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Messages</a>
+    </li>      
+  </ul>
+
+  <!-- 
+    There are two types of forms in Angular
+    1. Template form = more simple and serve purpose for simple form
+    2. Reactive form 
+    We will use template form
+    We need to transform the form into angular form using template reference variable (#)
+    Angular forms support two way binding from tempalte to component. use ngmodel directive. We can use angular snippet (a-ngmodel)  
+    ngsubmit event is used to submit the form. 
+    We need to "connect" nav.component.ts "login" method to html component. We use: (ngsubmit) = "login()"
+    We can use "required" attribute to set the required field
+    We also need to set the name attribute because angular uses the name to assign to from controls so it can register them
+    Required is not enough because we ha to told angular to do something about it. We need to take a look at the from states and what to do (add validation)
+  -->
+  <form #loginForm="ngForm" class="form-inline my-2 my-lg-0" (ngSubmit) = "login()">
+    <input class="form-control mr-sm-2" type="text" name="username" placeholder="Username" required [(ngModel)]="model.username">
+    <input class="form-control mr-sm-2" type="password" name="password" placeholder="Password" required [(ngModel)]="model.password">
+    <button [disabled] = "!loginForm.valid" class="btn btn-success my-2 my-sm-0" type="submit">Login</button>
+  </form>
+</nav> 
