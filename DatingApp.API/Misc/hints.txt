@@ -1,0 +1,8 @@
+Component communication
+
+Parent --> child
+send data thorugh components
+In child component add: @Input() valuesFromHome: and this is used to store the data being passed down from parent component
+In parent component add the following <app-register [variableInChildComponent]="variableInParentComponent"></app-register>
+
+Child --> Parent

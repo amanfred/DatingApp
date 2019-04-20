@@ -22,4 +22,14 @@ export class NavComponent implements OnInit {
       console.log('Failed to log in');
     });
   }
+
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !! token; // if token is empty it will return false
+  }
+
+  loggedOut() {
+    localStorage.removeItem('token');
+    console.log('Logged out!');
+  }
 }

@@ -1,6 +1,10 @@
 Ctrl + K + C = comment a line
 Ctrl + K + U = uncomment a line
+Ctrl + P = search bar for files
+
 Shift + Alt + F = Auto format
+Alt + O = switch to 'ts' component
+Alt + U = switch to 'html' component
 
 
 dotnet watch run = terminal command for starting the API server (API folder)
@@ -30,3 +34,8 @@ ng serve = terminal command for starting the UI server (UI folder)
 </pre>
 
 rxjs = Reactive Extensions for JavaScript
+DOM = domain object model
+
+Snippets 
+a-ngIf  + tab
+a-ngModel + tab
