@@ -23,3 +23,6 @@ using auth0 library:
 Website: https://github.com/auth0/angular2-jwt
  Install: npm install @auth0/angular-jwt
 
+ngxBootstrap:
+Website: https://valor-software.com/ngx-bootstrap/#/
+Install: npm install ngx-bootstrap --save
