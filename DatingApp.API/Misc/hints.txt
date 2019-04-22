@@ -6,3 +6,20 @@ In child component add: @Input() valuesFromHome: and this is used to store the d
 In parent component add the following <app-register [variableInChildComponent]="variableInParentComponent"></app-register>
 
 Child --> Parent
+
+Using alertifyjs library
+alertifyjs.com --> javascript library for alerts and notifications
+Install it into front-end directory
+npm install alertifyjs --save
+two places: 
+angular.json in "scripts" and add alertify.min.json 
+styles.css and add css files 
+@import '../node_modules/alertifyjs/build/css/alertify.min.css';
+@import '../node_modules/alertifyjs/build/css/themes/bootstrap.min.css';
+
+Use styles as a service. We'll generate an angular service and we'll add wrapper methods arounf alertify methods.
+
+using auth0 library:
+Website: https://github.com/auth0/angular2-jwt
+ Install: npm install @auth0/angular-jwt
+

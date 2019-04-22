@@ -18,6 +18,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Net;
 using Microsoft.AspNetCore.Http;
+using DatingApp.API.Helpers;
 
 namespace DatingApp.API
 {    public class Startup
@@ -77,6 +78,7 @@ namespace DatingApp.API
                         var error = context.Features.Get<IExceptionHandlerFeature>();
                         if (error != null)
                         {
+                            context.Response.AddApplicationError(error.Error.Message);
                             await context.Response.WriteAsync(error.Error.Message); //get the error message from the exception itself to https response
                         }
                     });

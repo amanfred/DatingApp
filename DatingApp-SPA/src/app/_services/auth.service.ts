@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
+import {JwtHelperService} from '@auth0/angular-jwt';
 
 @Injectable({
   // this allows us to inject things into our service. Components are automatically injectable (by default).
@@ -8,6 +9,9 @@ import {map} from 'rxjs/operators';
 })
 export class AuthService {
   baseUrl = 'http://localhost:5000/api/auth/'; // use base url in post method
+  jwtHelper = new JwtHelperService();
+  decodedToken: any;
+
   constructor(private http: HttpClient) { }
 
   login(model: any) {
@@ -18,6 +22,7 @@ export class AuthService {
         const user = response; // this is the token object
         if (user) {
           localStorage.setItem('token', user.token);
+          this.decodedToken = this.jwtHelper.decodeToken(user.token);
         }
       })
     );
@@ -25,5 +30,10 @@ export class AuthService {
 
   register(model: any) {
     return this.http.post(this.baseUrl + 'register', model);
+  }
+
+  loggedIn() {
+    const token = localStorage.getItem('token');
+    return !this.jwtHelper.isTokenExpired(token); // if it is expired it will return false.
   }
 }
