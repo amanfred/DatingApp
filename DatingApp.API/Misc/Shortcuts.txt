@@ -39,3 +39,4 @@ DOM = domain object model
 Snippets 
 a-ngIf  + tab
 a-ngModel + tab
+a-rout --> adds router option to the div tag

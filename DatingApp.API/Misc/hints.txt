@@ -26,3 +26,5 @@ Website: https://github.com/auth0/angular2-jwt
 ngxBootstrap:
 Website: https://valor-software.com/ngx-bootstrap/#/
 Install: npm install ngx-bootstrap --save
+
+creating hte components: ng g guard auth --spec=false
