@@ -6,6 +6,14 @@ Shift + Alt + F = Auto format
 Alt + O = switch to 'ts' component
 Alt + U = switch to 'html' component
 
+SQL Manager:
+Ctrl + Shift + R = refreh Intellisense
+
+Database
+dotnet ef migration add {migration name}
+dotnet ef database update
+dotnet ef database drop //drop database
+
 
 dotnet watch run = terminal command for starting the API server (API folder)
 ng serve = terminal command for starting the UI server (UI folder)
