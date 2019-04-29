@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import {map} from 'rxjs/operators';
 import {JwtHelperService} from '@auth0/angular-jwt';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   // this allows us to inject things into our service. Components are automatically injectable (by default).
   providedIn: 'root' // this tells our service which module is providing the serrvice. Wee need to add reference into app.module.ts
 })
 export class AuthService {
-  baseUrl = 'http://localhost:5000/api/auth/'; // use base url in post method
+  baseUrl = environment.apiUrl + 'auth/'; // use base url in post method
   jwtHelper = new JwtHelperService();
   decodedToken: any;
 
